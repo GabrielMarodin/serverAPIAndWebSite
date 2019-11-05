@@ -1,4 +1,7 @@
 <?php
+
+include_once '../connection.php';
+
 $allowedtypes = array(
     "jpg",
     "png",
@@ -8,6 +11,7 @@ $allowedtypes = array(
 );
 
 $target_dir = "uploads/";
+$file_name = basename($_FILES["fileToUpload"]["name"]);
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $fileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -35,7 +39,17 @@ if( in_array($fileType, $allowedtypes) == false) {
 // Check if $uploadOk is set to 0 by an error then uploads file
 
 if ($uploadOk == 1) {
-    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-    }
+    move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
+
+    $database = new Database();
+
+    $db = $database->getConnection();
+
+    $date = date('m/d/Y h:i:s a', time());
+
+    $query = "INSERT INTO media (tipo, path, titulo, duracao, data_upload) 
+        VALUES ($fileType, $target_file, $file_name, $file_duration, $date)";
+     $stmt = $db->prepare( $query );
+     $stmt->execute();
 }
 ?>

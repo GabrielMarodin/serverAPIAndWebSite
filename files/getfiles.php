@@ -1,5 +1,5 @@
 <?php
-    include_once 'connection.php';
+    include_once '../connection.php';
 
     $database = new Database();
 
@@ -13,9 +13,9 @@
 
     $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    foreach($stmt as $key){
-        $data []= $key;
-    }
+
+    $data = $stmt;
+
 
     if(!$stmt){
         $data = "{'success':false}";
