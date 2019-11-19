@@ -16,5 +16,6 @@ $RECYCLE.BIN/
 *.log
 log.txt
 npm-debug.log*
+*.mp4
 
 /files/uploads
