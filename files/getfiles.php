@@ -11,11 +11,7 @@
 
     $stmt->execute();
 
-    $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-
-    $data = $stmt;
-
+    $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     if(!$stmt){
         $data = "{'success':false}";

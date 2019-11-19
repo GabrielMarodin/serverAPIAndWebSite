@@ -2,7 +2,7 @@
 
     class Database{
         
-        private $host = "127.0.0.1";
+        private $host = "localhost";
         private $db_name = "stream";
         private $username = "root";
         private $password = "";
