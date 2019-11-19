@@ -14,7 +14,7 @@
 	$data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     if($stmt){
-        $result = "{'success':true, 'data':" . json_encode($data) . "}";
+        $result = json_encode($data);
     }
     else{
         $result = "{'success':false}";
