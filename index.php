@@ -11,7 +11,7 @@
       <?php 
       
         require 'html/slide.php'; 
-
+		session_start();
         if(isset($_SESSION['user']) ){
           include 'html/uploadFile.php';
         }else{
