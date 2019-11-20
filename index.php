@@ -9,7 +9,7 @@
   </head>
   <body class="black">
       <?php 
-      
+       require 'api/activity.php';
        require 'html/slide.php'; 
         session_start();
         

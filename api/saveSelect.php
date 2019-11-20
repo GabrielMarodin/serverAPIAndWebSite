@@ -1,4 +1,4 @@
-<?
+<?php
     include_once 'connection.php';
     
     $id_file = $_POST["id_media"];
@@ -13,5 +13,5 @@
     $stmt = $db->prepare( $query );
     $stmt->execute([$id_file,$group_name]);
 
-    header('Location: ../index.php);
+    header('Location: ../index.php');
  ?>

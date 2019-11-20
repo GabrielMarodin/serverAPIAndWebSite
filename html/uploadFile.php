@@ -1,7 +1,7 @@
 <div class="row teal ">
     <form action="files/upload.php" method="post" enctype="multipart/form-data">
         <div class="row">
-            <h5>Select image to upload:</h5>
+            <h5>Select File to upload:</h5>
             <div class="input-field col m12">
                 <div class="file-field input-field">
                     <div class="btn">
@@ -15,10 +15,11 @@
             </div>
             <div class="input-field col m12">
                 <input class="validate" type='text' value="30" name='duration' id='duration' size='5' />
+                <label for="duration"><b>Duração</b></label>
             </div>
             <div class="col m12">
                 <button class="btn" type="submit" name="submit">
-                    <i class="material-icons right">Upload Image</i>
+                    <i class="material-icons right">Upload File</i>
                 </button>
             </div>
         </div>

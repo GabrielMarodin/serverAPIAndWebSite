@@ -6,7 +6,7 @@
                 <div class="row">
                     <div class="input-field col m12">
                         <label for="group_name"><b>Nome da Apresentação</b></label>
-                        <input class="validate" type="text" name="group_name"></input>
+                        <input class="validate" type="text" name="group_name" required></input>
                     </div>
                     <?php require_once 'files/getfiles.php';
                         foreach($data as $file) {
@@ -18,7 +18,7 @@
                             }else{
                                 echo'<img class="responsive-img" src="files/'.$file['path'].'">';
                             }
-                                echo'<p><label><input type="checkbox" name="id_media" value="'.$file['id'].'"><span>'.$file['titulo'].'</span></label></p>';
+                                echo'<p><label><input type="checkbox" name="id_media" value="'.$file['id'].'"><span>'.$file['titulo'].' Segundos: '.$file['duracao'].'</span></label></p>';
                             echo'</div>';
                         }?>
                 </div>
