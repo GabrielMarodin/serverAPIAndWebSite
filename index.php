@@ -11,7 +11,7 @@
 
       <?php 
       
-        require 'html/slide.php'; 
+       // require 'html/slide.php'; 
         session_start();
         
         if(isset($_SESSION['user']) ){
@@ -24,9 +24,10 @@
         }
       ?>
 
-    <script src="jquery.js"></script>
-    <script src="materialize.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/materialize.min.js"></script>
     <script src="js/slide.js"></script>
     <script src="js/getDuration.js"></script>
+    <script src="js/collapsible"></script>
   </body>
 </html>
