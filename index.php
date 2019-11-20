@@ -7,11 +7,10 @@
     <link rel="stylesheet" href="css/style.css">
     
   </head>
-  <body>
-
+  <body class="black">
       <?php 
       
-       // require 'html/slide.php'; 
+       require 'html/slide.php'; 
         session_start();
         
         if(isset($_SESSION['user']) ){
@@ -28,6 +27,6 @@
     <script src="js/materialize.min.js"></script>
     <script src="js/slide.js"></script>
     <script src="js/getDuration.js"></script>
-    <script src="js/collapsible"></script>
+    <script src="js/collapsible.js"></script>
   </body>
 </html>
