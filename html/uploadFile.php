@@ -1,10 +1,28 @@
 <div class="row">
     <div class="col m12">
         <form action="files/upload.php" method="post" enctype="multipart/form-data">
-            Select image to upload:
-            <input type="file" name="fileToUpload" id="fileToUpload">
-            <input type='text' name='duration' id='duration' size='5' />
-            <input type="submit" value="Upload Image" name="submit">
+            <div class="row">
+                <h5>Select image to upload:</h5>
+                <div class="input-field col m6">
+                    <div class="file-field input-field">
+                        <div class="btn">
+                            <span>File</span>
+                            <input  type="file" name="fileToUpload" id="fileToUpload">
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="input-field col m2">
+                    <input class="validate" type='text' name='duration' id='duration' size='5' />
+                </div>
+                <div class="col m4">
+                    <button class="btn" type="submit" name="submit">
+                        <i class="material-icons right">Upload Image</i>
+                    </button>
+                </div>
+            </div>
         </form>
 
         <audio id='audio'></audio>
