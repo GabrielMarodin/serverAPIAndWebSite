@@ -15,7 +15,7 @@
               echo '<source src="files/'.$file['path'].'" type="video/'.$file['tipo'].'">';
             echo '</video>';
           }else{
-            echo '<img id="'.$file['id'].'" data-duracao="30" src="files/'.$file['path'].'">';
+            echo '<img id="'.$file['id'].'" data-duracao="'.$file['duracao'].'" src="files/'.$file['path'].'">';
           }
         echo '</div>';
       }
