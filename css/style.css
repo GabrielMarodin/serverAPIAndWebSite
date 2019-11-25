@@ -1,14 +1,31 @@
 * {box-sizing:border-box}
+html{
+  height: 100%;
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+html::-webkit-scrollbar {
+  display: none;
+}
 body{
+  height: 100%;
   width: 100%;
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+body::-webkit-scrollbar {
+  display: none;
 }
 /* Slideshow container */
 .slideshow-container {
   min-height: 100vh;
   width: 100%;
   position: relative;
-  margin: auto;
+  margin: 0px;
 }
+
 
 /* Hide the images by default */
 .mySlides {
