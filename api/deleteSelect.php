@@ -6,18 +6,25 @@
     $db = $database->getConnection();
     $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 
-    $query = "INSERT INTO media_select (id_media, nome) VALUES (?,?)";
-
     $group_name = $_POST["group_name"];
 
-    if ( isset($_POST['id_media']) && is_array($_POST['id_media']) ){
+    if ( isset($_POST['id_media']) && is_array($_POST['id_media']) && !isset($_POST["group_name"]) ){
         
         foreach ($_POST['id_media'] as $id_file){
 
+            $query = "DELETE FROM media_select WHERE id_media = ? ";
+
             $stmt = $db->prepare( $query );
-            $stmt->execute([$id_file,$group_name]);
+            $stmt->execute($id_file);
 
         }
+
+    }else{
+        $query = "DELETE FROM media_select WHERE group_name = ? ";
+
+        $stmt = $db->prepare( $query );
+        $stmt->execute($group_name);
     }
+
     header('Location: ../index.php');
  ?>

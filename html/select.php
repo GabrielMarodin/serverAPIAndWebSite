@@ -18,7 +18,7 @@
                             }else{
                                 echo'<img class="responsive-img" src="files/'.$file['path'].'">';
                             }
-                                echo'<p><label><input type="checkbox" name="id_media" value="'.$file['id'].'"><span>'.$file['titulo'].' Segundos: '.$file['duracao'].'</span></label></p>';
+                                echo'<p><label><input type="checkbox" name="id_media[]" value="'.$file['id'].'"><span>'.$file['titulo'].' Segundos: '.$file['duracao'].'</span></label></p>';
                             echo'</div>';
                         }?>
                 </div>
