@@ -1,15 +1,24 @@
+<?php
+    if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
+        // last request was more than 30 minutes ago
+        session_unset();     // unset $_SESSION variable for the run-time 
+        session_destroy();   // destroy session data in storage
+    }
+    $_SESSION['LAST_ACTIVITY'] = time(); // update last activity time stamp
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <title>title</title>
     <link rel="stylesheet" href="css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     
   </head>
   <body class="black">
-      <?php 
-       require 'api/activity.php';
+      <?php
        require 'html/slide.php'; 
         session_start();
         
@@ -17,7 +26,9 @@
           include 'html/uploadFile.php';
 
           include 'html/select.php';
-
+          if ($_SESSION['isadmin'] == 1) {
+            include 'html/delete.php';
+          }
         }else{
           require 'html/loginPage.php';
         }

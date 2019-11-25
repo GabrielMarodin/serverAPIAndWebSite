@@ -18,9 +18,7 @@
                 <label for="duration"><b>Duração</b></label>
             </div>
             <div class="col m12">
-                <button class="btn" type="submit" name="submit">
-                    <i class="material-icons right">Upload File</i>
-                </button>
+                <button class="btn" type="submit" name="submit">Upload File</button>
             </div>
         </div>
     </form>

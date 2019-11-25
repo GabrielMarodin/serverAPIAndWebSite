@@ -23,7 +23,7 @@
                         }?>
                 </div>
                 <button class="btn " type="submit" name="action">
-                    <i class="material-icons ">Save</i>
+                    <i class="material-icons">save</i> 
                 </button>
             </form>
         </div>

@@ -18,6 +18,7 @@
 	if($user){
 		session_start();
 		$_SESSION['user']=$user->id;
+		$_SESSION['isadmin']=$user->admin;
 		$_SESSION['LAST_ACTIVITY'] = time();
 		header('Location: ../index.php');
 	}

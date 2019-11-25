@@ -12,7 +12,7 @@
         
         foreach ($_POST['id_media'] as $id_file){
 
-            $query = "DELETE FROM media_select WHERE id_media = ? ";
+            $query = "DELETE FROM media WHERE id = ? ";
 
             $stmt = $db->prepare( $query );
             $stmt->execute($id_file);
