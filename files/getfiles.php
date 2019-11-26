@@ -1,12 +1,19 @@
 <?php
-    include_once 'api/connection.php';
+    include_once 'api/connection.php'; include_once 'files/getGroups.php';
 
     $database = new Database();
 
     $db = $database->getConnection();
+    $validate = null;
+    foreach ($groups as $group) {
+       if ($_GET['group_name'] == $group['nome']) {
+        break;
+       }else {
+           $validate = true;
+       }
+    }
 
-
-    if (isset($_GET['group_name'])) {
+    if (!$validate) {
         $group_name = $_GET['group_name'];
         $query = "SELECT * FROM media_select INNER JOIN media ON media_select.id_media = media.id WHERE media_select.nome = ?";
         $stmt = $db->prepare( $query );
