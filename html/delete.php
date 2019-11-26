@@ -1,4 +1,3 @@
-
 <ul class="collapsible">
     <li>
         <div class="collapsible-header">Delete files and/or slideshow group</div>

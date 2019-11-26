@@ -5,7 +5,7 @@
 
     $db = $database->getConnection();
 
-    $query = "SELECT DISTINCT nome FROM media_select";
+    $query = "SELECT * FROM media_select LEFT JOIN media ON media_select.id_media = media.id GROUP BY media_select.nome";
 
     $stmt = $db->prepare( $query );
 

@@ -22,7 +22,9 @@
   <body class="black">
       <?php
        require 'html/slide.php'; 
-       
+
+       include 'html/playGroup.php';
+
         if(isset($_SESSION['user']) ){
           include 'html/uploadFile.html';
 
