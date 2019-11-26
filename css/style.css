@@ -9,7 +9,9 @@ html{
 html::-webkit-scrollbar {
   display: none;
 } 
-
+body{
+  height: 100%;
+}
 /* Slideshow container */
 .slideshow-container {
   min-height: 100vh;
@@ -20,12 +22,14 @@ html::-webkit-scrollbar {
 /* Hide the images by default */
 .mySlides {
   min-height: 100vh;
+  max-height: 100vh;
   width: 100%;
   display: none;
 }
 .mySlides img, .mySlides video{
   width: 100%;
   min-height: 100vh;
+  max-height: 100vh;
 }
 
 /* On hover, add a black background color with a little bit see-through */
