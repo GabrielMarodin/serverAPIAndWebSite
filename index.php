@@ -1,4 +1,5 @@
 <?php
+  session_start();
     if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
         // last request was more than 30 minutes ago
         session_unset();     // unset $_SESSION variable for the run-time 
@@ -21,17 +22,17 @@
   <body class="black">
       <?php
        require 'html/slide.php'; 
-        session_start();
-        
+       
         if(isset($_SESSION['user']) ){
-          include 'html/uploadFile.php';
+          include 'html/uploadFile.html';
 
           include 'html/select.php';
           if ($_SESSION['isadmin'] == 1) {
             include 'html/delete.php';
           }
+          include 'html/logout.html';
         }else{
-          require 'html/loginPage.php';
+          require 'html/loginPage.html';
         }
       ?>
 

@@ -1,12 +1,14 @@
 
 <ul class="collapsible">
     <li>
-        <div class="collapsible-header">Create slideshow</div>
+        <div class="collapsible-header">Delete files and/or slideshow group</div>
         <div class="collapsible-body blue-grey lighten-4">
             <form action="api/deleteSelect.php" method="post" id="select">
                 <div class="row">
-                    <h4>Selecione arquivos para deletar:</h4>
                     <?php require_once 'files/getfiles.php';
+                        if (isset($data)) {
+                            echo'<h4>Selecione arquivos para deletar:</h4>';
+                        }
                         foreach($data as $file) {
                             echo'<div class="col m2">';
                             if($file['tipo'] == 'mp4' || $file['tipo'] == 'obb' || $file['tipo'] == 'webm'){
@@ -21,11 +23,13 @@
                         }?>
                 </div>
                 <div class="row">
-                    <h4>Ou selecione Grupos para deletar:</h4>
                         <?php require_once 'files/getGroups.php';
+                            if (isset($group)) {
+                                echo '<h4>Ou selecione Grupos para deletar:</h4>';
+                            }
                             foreach($groups as $group) {
                                 echo'<div class="col m2">';
-                                    echo'<p><label><input type="checkbox" name="id_media[]" value="'.$file['id'].'"><span>'.$file['titulo'].' Segundos: '.$file['duracao'].'</span></label></p>';
+                                    echo'<p><label><input type="checkbox" name="group_name[]" value="'.$group['nome'].'"><span>'.$group['nome'].'</span></label></p>';
                                 echo'</div>';
                             }?>
                 </div>

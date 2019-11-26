@@ -1,23 +1,15 @@
 * {box-sizing:border-box}
+ 
 html{
   height: 100%;
   overflow-y: scroll;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 html::-webkit-scrollbar {
   display: none;
-}
-body{
-  height: 100%;
-  width: 100%;
-  overflow-y: scroll;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
-}
-body::-webkit-scrollbar {
-  display: none;
-}
+} 
+
 /* Slideshow container */
 .slideshow-container {
   min-height: 100vh;
@@ -25,8 +17,6 @@ body::-webkit-scrollbar {
   position: relative;
   margin: 0px;
 }
-
-
 /* Hide the images by default */
 .mySlides {
   min-height: 100vh;
