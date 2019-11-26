@@ -6,7 +6,7 @@
     $db = $database->getConnection();
     $validate = null;
     foreach ($groups as $group) {
-       if ($_GET['group_name'] == $group['nome']) {
+       if (isset($_GET['group_name']) && $_GET['group_name'] == $group['nome']) {
         break;
        }else {
            $validate = true;
